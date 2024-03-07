@@ -14,10 +14,12 @@ let package = Package(
             targets: ["ExyteChat"]),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/siteline/swiftui-introspect",
-            from: "1.0.0"
-        ),
+               
+        .package(url: "https://github.com/moyoteg/SwiftUI-Introspect", branch: "master"),
+        // .package(
+        //     url: "https://github.com/siteline/swiftui-introspect",
+        //     from: "1.1.3"
+        // ),
         .package(
             url: "https://github.com/exyte/MediaPicker.git",
             from: "2.0.0"
@@ -35,7 +37,8 @@ let package = Package(
         .target(
             name: "ExyteChat",
             dependencies: [
-                .product(name: "SwiftUIIntrospect", package: "swiftui-introspect"),
+                "SwiftUI-Introspect"
+                // .product(name: "SwiftUI-Introspect", package: "swiftui-introspect"),
                 .product(name: "ExyteMediaPicker", package: "MediaPicker"),
                 .product(name: "FloatingButton", package: "FloatingButton"),
                 .product(name: "ActivityIndicatorView", package: "ActivityIndicatorView")
